@@ -35,16 +35,26 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center mandala-bg relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Hero Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="" 
+          alt="Conference audience" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/85 to-bitcoin-orange/20"></div>
+      </div>
+      
       {/* Floating Bitcoin Symbol */}
-      <div className="absolute top-20 right-20 text-bitcoin-orange/10 text-8xl animate-float hidden lg:block">
+      <div className="absolute top-20 right-20 text-bitcoin-orange/10 text-8xl animate-float hidden lg:block z-10">
         ₿
       </div>
-      <div className="absolute bottom-32 left-16 text-bitcoin-orange/10 text-6xl animate-float hidden lg:block" style={{ animationDelay: '1s' }}>
+      <div className="absolute bottom-32 left-16 text-bitcoin-orange/10 text-6xl animate-float hidden lg:block z-10" style={{ animationDelay: '1s' }}>
         ₿
       </div>
       
-      <div className="container mx-auto px-4 py-20 text-center animate-fade-in">
+      <div className="container mx-auto px-4 py-20 text-center animate-fade-in relative z-20">
         <div className="max-w-4xl mx-auto">
           {/* Main Headline */}
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif font-bold text-black mb-6 leading-tight">
@@ -83,7 +93,7 @@ const HeroSection = () => {
               <p className="font-mono text-sm text-text-secondary mb-4">
                 Get notified when registrations open
               </p>
-              <div className="flex gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <input
                   type="email"
                   value={email}

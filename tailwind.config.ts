@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -66,7 +65,7 @@ export default {
 				// Custom Bitcoin Conference Colors
 				'bitcoin-orange': '#ed8200',
 				'bg-light': '#fafafa',
-				'text-secondary': '#6c757d',
+				'text-secondary': 'rgb(11 11 11)',
 				'border-light': '#d5d5d5',
 			},
 			fontFamily: {

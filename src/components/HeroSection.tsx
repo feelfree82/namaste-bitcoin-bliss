@@ -43,7 +43,7 @@ const HeroSection = () => {
           alt="Conference audience" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/85 to-bitcoin-orange/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/70 via-white/70 to-bitcoin-orange/20"></div>
       </div>
       
       {/* Floating Bitcoin Symbol */}

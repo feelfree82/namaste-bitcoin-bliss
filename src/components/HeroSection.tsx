@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
@@ -6,14 +5,32 @@ import { toast } from 'sonner';
 const HeroSection = () => {
   const [email, setEmail] = useState('');
 
-  const handleNotifyMe = () => {
-    if (email.trim()) {
-      toast.success('Thank you! We\'ll notify you when registrations open.', {
-        duration: 4000,
+  const handleNotifyMe = async () => {
+    if (!email.trim() || !/^\S+@\S+\.\S+$/.test(email)) {
+      toast.error('Please enter a valid email address');
+      return;
+    }
+
+    try {
+      const response = await fetch('https://formspree.io/f/xyzjwogw', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
       });
-      setEmail('');
-    } else {
-      toast.error('Please enter your email address');
+
+      if (response.ok) {
+        toast.success('Thank you! We\'ll notify you when registrations open.', {
+          duration: 4000,
+        });
+        setEmail('');
+      } else {
+        toast.error('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast.error('Something went wrong. Please try again.');
     }
   };
 

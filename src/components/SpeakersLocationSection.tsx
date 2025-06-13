@@ -12,7 +12,7 @@ const SpeakersLocationSection = () => {
                 <span className="block text-bitcoin-orange">Crypto Event</span>
               </h2>
               
-              <p className="text-lg md:text-xl font-mono text-text-secondary mb-8 max-w-lg">
+              <p className="text-lg md:text-xl font-mono text-text-secondary mb-8">
                 This is India's movement of financial sovereignty
               </p>
               
@@ -68,7 +68,7 @@ const SpeakersLocationSection = () => {
             <div className="relative">
               <div className="bg-gradient-to-br from-bitcoin-orange/10 to-bitcoin-orange/5 rounded-xl p-8 border border-border-light min-h-64 flex items-center justify-center">
                 <img 
-                  src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&h=400&fit=crop&crop=center"
+                  src="/images/bangalore.jpg"
                   alt="Bangalore cityscape"
                   className="w-full h-48 object-cover rounded-lg opacity-80"
                 />
@@ -81,11 +81,7 @@ const SpeakersLocationSection = () => {
                 </svg>
               </div>
               
-              <div className="absolute -bottom-4 -left-4 bg-white text-bitcoin-orange p-3 rounded-full shadow-lg border border-border-light animate-float" style={{ animationDelay: '1.5s' }}>
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
-                </svg>
-              </div>
+              <div className="absolute -bottom-4 -left-4 bg-white text-bitcoin-orange rounded-full shadow-lg animate-float" style={{ animationDelay: '1.5s' }}></div>
             </div>
           </div>
         </div>

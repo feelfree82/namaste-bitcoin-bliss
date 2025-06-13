@@ -7,7 +7,7 @@ const Footer = () => {
           {/* Logo/Branding */}
           <div className="space-y-2">
             <h3 className="text-2xl font-serif font-bold">Namaste Bitcoin 2026</h3>
-            <p className="font-mono text-sm text-gray-400">Organized by Getbit</p>
+            <p className="font-mono text-sm text-gray-400"><a href="https://getbit.in" target="_blank" rel="noopener noreferrer">Organized by Getbit</a></p>
           </div>
           
           {/* Event Details */}
@@ -22,7 +22,7 @@ const Footer = () => {
           {/* Copyright */}
           <div className="pt-6 border-t border-gray-800">
             <p className="font-mono text-xs text-gray-500">
-              © 2024 Getbit. All rights reserved.
+              © 2025 Getbit. All rights reserved.
             </p>
           </div>
         </div>

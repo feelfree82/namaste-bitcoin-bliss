@@ -1,0 +1,534 @@
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS Variables - Design System */
+:root {
+    --bitcoin-orange: #ed8200;
+    --bg-light: #fafafa;
+    --text-primary: #000000;
+    --text-secondary: #6c757d;
+    --border-light: #d5d5d5;
+    --white: #ffffff;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Typography */
+body {
+    font-family: 'DM Mono', monospace;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Serif Display', serif;
+    line-height: 1.2;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(237, 130, 0, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(237, 130, 0, 0.03) 0%, transparent 50%);
+    background-size: 400px 400px;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ed8200' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+.floating-bitcoin {
+    position: absolute;
+    color: rgba(237, 130, 0, 0.1);
+    font-size: 6rem;
+    animation: float 3s ease-in-out infinite;
+    z-index: 1;
+}
+
+.floating-bitcoin-1 {
+    top: 5rem;
+    right: 5rem;
+}
+
+.floating-bitcoin-2 {
+    bottom: 8rem;
+    left: 4rem;
+    font-size: 4rem;
+    animation-delay: 1s;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 64rem;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.title-highlight {
+    display: block;
+    color: var(--bitcoin-orange);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 32rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.event-details {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+}
+
+.event-date {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.event-location {
+    color: var(--text-secondary);
+}
+
+.cta-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.btn-primary {
+    background-color: var(--bitcoin-orange);
+    color: var(--white);
+    font-family: 'DM Mono', monospace;
+    font-size: 1.125rem;
+    padding: 1.5rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+.btn-primary:hover {
+    background-color: rgba(237, 130, 0, 0.9);
+    box-shadow: var(--shadow);
+    transform: scale(1.05);
+}
+
+.limited-seats {
+    font-size: 0.875rem;
+    color: var(--bitcoin-orange);
+    font-weight: 500;
+}
+
+.email-signup {
+    max-width: 28rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-light);
+}
+
+.signup-text {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.signup-form {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.email-input {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-light);
+    border-radius: 0.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.875rem;
+}
+
+.email-input:focus {
+    outline: none;
+    border-color: var(--bitcoin-orange);
+    box-shadow: 0 0 0 2px rgba(237, 130, 0, 0.1);
+}
+
+.btn-notify {
+    border: 1px solid var(--bitcoin-orange);
+    color: var(--bitcoin-orange);
+    background-color: transparent;
+    font-family: 'DM Mono', monospace;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-notify:hover {
+    background-color: var(--bitcoin-orange);
+    color: var(--white);
+}
+
+/* Speakers & Location Section */
+.speakers-location-section {
+    padding: 5rem 0;
+    background-color: var(--bg-light);
+}
+
+.section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+}
+
+.section-content {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 32rem;
+}
+
+.info-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-light);
+}
+
+.card-title {
+    color: var(--bitcoin-orange);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    margin-bottom: 1rem;
+}
+
+.status-badge {
+    display: inline-block;
+    background-color: rgba(237, 130, 0, 0.1);
+    color: var(--bitcoin-orange);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Speaker Grid */
+.speaker-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.speaker-placeholder {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, rgba(237, 130, 0, 0.2), rgba(237, 130, 0, 0.05));
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-light);
+}
+
+.speaker-placeholder span {
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba(237, 130, 0, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bitcoin-orange);
+    font-size: 1.25rem;
+}
+
+/* Location Visual */
+.location-visual {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.city-image {
+    background: linear-gradient(135deg, rgba(237, 130, 0, 0.1), rgba(237, 130, 0, 0.05));
+    border-radius: 0.75rem;
+    padding: 2rem;
+    border: 1px solid var(--border-light);
+    min-height: 16rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.city-img {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    opacity: 0.8;
+}
+
+.floating-icon {
+    position: absolute;
+    padding: 0.75rem;
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+    animation: float 3s ease-in-out infinite;
+}
+
+.icon-1 {
+    top: -1rem;
+    right: -1rem;
+    background-color: var(--bitcoin-orange);
+    color: var(--white);
+}
+
+.icon-2 {
+    bottom: -1rem;
+    left: -1rem;
+    background-color: var(--white);
+    color: var(--bitcoin-orange);
+    border: 1px solid var(--border-light);
+    animation-delay: 1.5s;
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--text-primary);
+    color: var(--white);
+    padding: 3rem 0;
+}
+
+.footer-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.footer-subtitle {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-details {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.footer-bitcoin {
+    color: var(--bitcoin-orange);
+    font-size: 4rem;
+}
+
+.footer-copyright {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+}
+
+.footer-copyright p {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background-color: var(--white);
+    color: var(--text-primary);
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-light);
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.toast.show {
+    transform: translateX(0);
+}
+
+.toast.success {
+    border-left: 4px solid #10b981;
+}
+
+.toast.error {
+    border-left: 4px solid #ef4444;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .floating-bitcoin {
+        display: none;
+    }
+    
+    .section-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .signup-form {
+        flex-direction: column;
+    }
+    
+    .speaker-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .btn-primary {
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+    }
+}

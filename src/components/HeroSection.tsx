@@ -38,11 +38,11 @@ const HeroSection = () => {
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Hero Background Image */}
       <div className="absolute inset-0 z-0">
-        <img 
+        {/*<img 
           src="/images/hero-bg.jpg" 
           alt="Conference audience" 
           className="w-full h-full object-cover"
-        />
+        />*/}
         <div className="absolute inset-0 bg-gradient-to-br from-white/70 via-white/70 to-bitcoin-orange/20"></div>
       </div>
       
@@ -75,7 +75,7 @@ const HeroSection = () => {
           
           {/* CTA Buttons */}
           <div className="space-y-6">
-            <div className="space-y-4">
+            <div className="flex flex-col items-center space-y-4">
               <Button 
                 size="lg" 
                 className="bg-bitcoin-orange hover:bg-bitcoin-orange/90 text-white font-mono text-lg px-8 py-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
@@ -83,7 +83,7 @@ const HeroSection = () => {
                 Registrations Opening Soon
               </Button>
               
-              <p className="font-mono text-sm text-bitcoin-orange font-medium">
+              <p className="font-mono text-sm font-medium bg-yellow-300/70 text-black px-3 py-1 rounded-full inline-block">
                 Limited Seats Available
               </p>
             </div>

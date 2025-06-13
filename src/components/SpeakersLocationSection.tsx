@@ -13,10 +13,10 @@ const SpeakersLocationSection = () => {
               </h2>
               
               <p className="text-lg md:text-xl font-mono text-text-secondary mb-8">
-                This is India's movement of financial sovereignty
+                India's movement of financial sovereignty
               </p>
               
-              <div className="bg-white p-8 rounded-xl shadow-lg border border-border-light">
+              <div className="bg-white p-8 rounded-xl border border-border-light">
                 <p className="font-mono text-base text-black mb-4">
                   Stay tuned for the speaker line-up!
                 </p>
@@ -54,7 +54,7 @@ const SpeakersLocationSection = () => {
                 Where the sharpest minds reside!
               </p>
               
-              <div className="bg-white p-8 rounded-xl shadow-lg border border-border-light">
+              <div className="bg-white p-8 rounded-xl border border-border-light">
                 <p className="font-mono text-base text-bitcoin-orange font-medium mb-2">
                   Venue Details
                 </p>
@@ -70,18 +70,18 @@ const SpeakersLocationSection = () => {
                 <img 
                   src="/images/bangalore.jpg"
                   alt="Bangalore cityscape"
-                  className="w-full h-48 object-cover rounded-lg opacity-80"
+                  className="w-full h-full object-cover rounded-lg opacity-80"
                 />
               </div>
               
               {/* Floating City Elements */}
-              <div className="absolute -top-4 -right-4 bg-bitcoin-orange text-white p-3 rounded-full shadow-lg animate-float">
+              <div className="absolute -top-4 -right-4 bg-bitcoin-orange text-white p-3 rounded-full animate-float">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                 </svg>
               </div>
               
-              <div className="absolute -bottom-4 -left-4 bg-white text-bitcoin-orange rounded-full shadow-lg animate-float" style={{ animationDelay: '1.5s' }}></div>
+              <div className="absolute -bottom-4 -left-4 bg-white text-bitcoin-orange rounded-full animate-float" style={{ animationDelay: '1.5s' }}></div>
             </div>
           </div>
         </div>
